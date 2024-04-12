@@ -34,13 +34,19 @@ function App() {
 
   return (
     <>
-      <form>
+      <form style={{ width: "50%" }}>
         {fields.map((field, index) => (
-          <div style={{ marginTop: "10px" }} key={index} field={field}>
-            <label htmlFor={field.name}>{field.name}</label>
+          <div style={{ marginTop: "10px" }} key={index}>
+            <label
+              style={{ float: "left", marginBottom: "10px" }}
+              htmlFor={field.name}
+            >
+              {field.name}
+            </label>
 
             {field.type === "text" && (
               <input
+                style={{ width: "100%", padding: "20px" }}
                 type='text'
                 onChange={(e) => {
                   setItemState(field.name, e.target.value);
@@ -50,6 +56,7 @@ function App() {
 
             {field.type === "textarea" && (
               <textarea
+                style={{ width: "100%", padding: "20px" }}
                 onChange={(e) => {
                   setItemState(field.name, e.target.value);
                 }}
@@ -58,9 +65,12 @@ function App() {
           </div>
         ))}
       </form>
-      <div className='formgroup'>
-        <label htmlFor='Result'>Result</label>
+      <div className='formgroup' style={{ marginTop: "20px", width: "50%" }}>
+        <label style={{ float: "left", marginBottom: "10px" }} htmlFor='Result'>
+          Result
+        </label>
         <textarea
+          style={{ width: "100%", padding: "20px" }}
           id='Result'
           name='Result'
           rows={10}

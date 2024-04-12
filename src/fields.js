@@ -15,5 +15,9 @@ const fields = [
     name: "Doc",
     type: "text",
   },
+  {
+    name: "Font",
+    type: "text",
+  },
 ];
 export default fields;
